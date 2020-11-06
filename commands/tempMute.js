@@ -3,7 +3,16 @@ const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
 
-    // !mute persoon tijd (h, m, s).
+    // !mute persoon tijd (h, m, s)..
+
+    if (args[1] == null) {
+
+        var helpEmbed = new discord.MessageEmbed()
+            .setTitle("!mute")
+            .setDescription("Je mute iemand als volgt: -mute persoon tijd (h, m,s)")
+        return message.channel.send(helpEmbed);
+
+    }
 
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry jij kan dit niet");
 
@@ -33,6 +42,8 @@ module.exports.run = async (client, message, args) => {
         message.channel.send(`${mutePerson} is geunmuted.`);
 
     }, ms(muteTime));
+
+
 
 
 }

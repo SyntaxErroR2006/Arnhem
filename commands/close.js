@@ -1,19 +1,21 @@
-const discord = require("discord.js");  
+const discord = require("discord.js");
 
-module.exports.run = async(client, message, args) => {
-    
-    const  categoryID = "728563729599430656";
+module.exports.run = async (client, message, args) => {
 
-    if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Sorry jij kan dit niet doen, als dit een fout is neem contact op met de Bot Developer.");
+    const categoryID = "728563729599430656";
 
-    if(message.channel.parentID == categoryID) { 
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply(embedPermission);
+
+    if (message.channel.parentID == categoryID) {
         message.channel.delete();
     } else {
 
         message.channel.send("Gelieve dit commando te doen bij een ticket!");
 
     }
-    
+
+    var embedPermission = new discord.MessageEmbed()
+        .setDescription("U heeft de permissie __KICK_MEMBERS__ niet.")
 }
 
 module.exports.help = {
