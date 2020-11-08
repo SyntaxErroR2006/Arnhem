@@ -13,7 +13,16 @@ module.exports.run = async (client, message, args) => {
         var embed = new discord.MessageEmbed()
             .setTitle("Training Menu")
             .setColor("#55c260")
-            .setDescription(`Je maakt een training aan door het volgende te doen: \n\n !training <DIENSTNUMMER> ${seperator} <TYPE> ${seperator} <2DE-DOCENT> ${seperator} <DATUM> ${seperator} <TIJD> ${seperator} <OPMERKINGEN> \n\n De dienstnummers: \n\n 1. Politie \n 2. Ambulance \n 3. Brandweer \n 4. Rijkswaterstaat \n 5. Koninklijke Marechaussee \n 6. Dienst Speciale Interventies (DSI) \n 7. Beveiliging \n 8. Rijexamen `);
+            .setDescription(`Je maakt een training aan door het volgende te doen: \n\n !training <DIENSTNUMMER> ${seperator} <TYPE> ${seperator} <2DE-DOCENT> ${seperator} <DATUM> ${seperator} <TIJD> ${seperator} <OPMERKINGEN> \n\n Dienstnummers:`)
+            .addField("1.", "Politie (POL)")
+            .addField("2.", "Ambulance (AMB)")
+            .addField("3.", "Brandweer (BRW)")
+            .addField("4.", "Rijkswaterstaat (RWS)")
+            .addField("5.", "Koninklijke Marechaussee (KMar)")
+            .addField("6.", "Dienst Speciale Interventies (DSI)")
+            .addField("7.", "Beveiliging (BE)")
+            .addField("8.", "Rijexamen (RIJ)")
+
 
         return message.channel.send(embed)
 
