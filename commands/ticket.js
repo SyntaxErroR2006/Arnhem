@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
 
 
     var embed = new discord.MessageEmbed()
-        .setDescription(`Je ticket wordt aangemaakt!`)
+        .setDescription(`Je ticket wordt aangemaakt in -> #${userName.toLowerCase() + "-" + "ticket", { type: "text" }}`)
         .setColor("#0d8579");
 
     message.channel.send(embed);
@@ -100,5 +100,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "new"
+    name: "ticket"
 }
