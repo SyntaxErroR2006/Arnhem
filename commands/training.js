@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
 
         var embed = new discord.MessageEmbed()
             .setTitle("Training Menu")
-            .setColor("#55c260")
+            .setColor("#0d8579")//#0d8579 //#55c260
             .setDescription(`Je maakt een training aan door het volgende te doen: \n\n !training <DIENSTNUMMER> ${seperator} <TYPE> ${seperator} <2DE-DOCENT> ${seperator} <DATUM> ${seperator} <TIJD> ${seperator} <OPMERKINGEN> \n\n Dienstnummers:`)
             .addField("1.", "Politie (POL)")
             .addField("2.", "Ambulance (AMB)")

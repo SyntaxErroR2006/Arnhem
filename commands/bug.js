@@ -16,21 +16,19 @@ module.exports.run = async (Client, message, args) => {
     const embed = new discord.MessageEmbed()
         .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL({ size: 4096 })}`)
         .setColor("#0d8579")
+        .setFooter(`Bugs ${client.user.username}`)
         .setDescription(bug)
 
 
 
-    message.channel.send(embedVerzonden);
+    message.channel.send("Verzonden!");
     var bugKanaal = message.guild.channels.cache.find(ch => ch.name === "bugs");
     if (!bugKanaal) return message.guild.send("Kan het kanaal niet vinden");
 
     bugKanaal.send(embed).then(embedMessage => {
-        embedMessage.react('👍');
-        embedMessage.react('👎');
+        embedMessage.react('✅');
+        embedMessage.react('❌');
     });
-
-    var embedVerzonden = new discord.MessageEmbed()
-        .setDescription("U bug is succesvol verzonden!");
 
 }
 

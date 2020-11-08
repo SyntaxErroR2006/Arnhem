@@ -17,21 +17,20 @@ module.exports.run = async (Client, message, args) => {
 
     const embed = new discord.MessageEmbed()
         .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL({ size: 4096 })}`)
+        .setFooter(`Suggesties ${client.user.username}`)
         .setColor("#0d8579")
         .setDescription(suggestie)
 
-    message.channel.send(embedVerzonden);
+    message.channel.send("Verzonden!");
     var suggestieKanaal = message.guild.channels.cache.find(ch => ch.name === "suggestie");
     if (!suggestieKanaal) return message.guild.send("Kan het kanaal niet vinden");
 
     suggestieKanaal.send(embed).then(embedMessage => {
-        embedMessage.react('👍');
-        embedMessage.react('👎');
+        embedMessage.react('✅');
+        embedMessage.react('❌');
     });
 
-    var embedVerzonden = new discord.MessageEmbed()
-        .setDescription("U suggestie is succesvol verzonden!");
-
+    
 
 }
 
