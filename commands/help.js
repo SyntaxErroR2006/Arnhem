@@ -1,10 +1,11 @@
 const discord = require("discord.js"); 
+const prefix = require("../botconfig.json");
 
 module.exports.run = async(client, message, args) => {
 
     var embed = new discord.MessageEmbed()
     .setTitle("Help Systeem Arnhem")
-    .setDescription("De prefix voor deze server is: `-`")
+    .setDescription(`De prefix voor deze server is: ${botConfig.prefix}`)
     .addField("Commands", "`suggestie`, `bug`, `help`, `groepen`, `leden`, `botinfo`")
     .addField("Mod", "`ban`, `kick`, `training`, `lock`, `unlock`, `giveaway`")
     .addField("Tickets", "`ticket`, `claim`, `close`")
