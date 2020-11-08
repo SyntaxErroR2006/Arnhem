@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 
         client.commands.set(fileGet.help.name, fileGet);
 
-    })pip
+    })
 
 });
 
